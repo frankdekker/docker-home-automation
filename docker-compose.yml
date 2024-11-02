@@ -24,3 +24,15 @@ services:
       - 1883:1883
       - 9001:9001
     restart: unless-stopped
+
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce
+    restart: unless-stopped
+    ports:
+      - "9000:9000/tcp"
+    environment:
+      - TZ=Europe/Amsterdam
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/portainer:/data
