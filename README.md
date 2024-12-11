@@ -1,5 +1,8 @@
 # docker-home-automation
 
+## Setup
+Create `.env` from `.env.example` and fill the values
+
 ## Directories
 
 - `/opt/homeautomation`  this repository
