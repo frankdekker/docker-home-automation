@@ -13,16 +13,15 @@ services:
     restart: unless-stopped
     privileged: true
 
-  mosquitto:
-    image: eclipse-mosquitto
-    container_name: mosquitto
+  zigbee2mqtt:
+    image: ghcr.io/koenkk/zigbee2mqtt
+    container_name: zigbee2mqtt
     volumes:
-      - /opt/mosquitto:/mosquitto
-      - /opt/mosquitto/data:/mosquitto/data
-      - /opt/mosquitto/log:/mosquitto/log
+      - /opt/zigbee2mqtt/data:/app/data
+    environment:
+      - TZ=Europe/Amsterdam
     ports:
-      - 1883:1883
-      - 9001:9001
+      - 8080:8080
     restart: unless-stopped
 
   portainer:
