@@ -13,6 +13,12 @@ services:
 #    restart: unless-stopped
 #    privileged: true
 
+  mqtt:
+    image: eclipse-mosquitto
+    container_name: mqtt
+    ports:
+      - "1883:1883"
+
   zigbee2mqtt:
     image: ghcr.io/koenkk/zigbee2mqtt
     container_name: zigbee2mqtt
