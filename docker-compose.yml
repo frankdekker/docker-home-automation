@@ -1,17 +1,17 @@
 services:
-  homeassistant:
-    container_name: homeassistant
-    image: "ghcr.io/home-assistant/home-assistant:stable"
-    environment:
-      TZ: Europe/Amsterdam
-    volumes:
-      - /opt/homeassistant/config:/config
-      - /etc/localtime:/etc/localtime:ro
-      - /run/dbus:/run/dbus:ro
-    ports:
-      - 8123:8123
-    restart: unless-stopped
-    privileged: true
+#  homeassistant:
+#    container_name: homeassistant
+#    image: "ghcr.io/home-assistant/home-assistant:stable"
+#    environment:
+#      TZ: Europe/Amsterdam
+#    volumes:
+#      - /opt/homeassistant/config:/config
+#      - /etc/localtime:/etc/localtime:ro
+#      - /run/dbus:/run/dbus:ro
+#    ports:
+#      - 8123:8123
+#    restart: unless-stopped
+#    privileged: true
 
   zigbee2mqtt:
     image: ghcr.io/koenkk/zigbee2mqtt
