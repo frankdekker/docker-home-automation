@@ -11,6 +11,10 @@ Create `.env` from `.env.example` and fill the values
 - `/opt/zigbee2mqtt` zigbee2mqtt data
 - `/opt/portainer` portainer data
 
+## Setup mosquitto
+Setup configuration and user/pass
+Read: https://github.com/sukesh-ak/setup-mosquitto-with-docker
+
 ## Troubleshooting
 
 ### Cant connect to Sonoff zigbee adapter
