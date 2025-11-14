@@ -35,7 +35,7 @@ services:
   whisper:
     container_name: whisper
     image: rhasspy/wyoming-whisper
-    command: --model tiny-int8 --language en
+    command: --model medium.en --language en
     volumes:
       - /opt/whisper-data:/data
     environment:
