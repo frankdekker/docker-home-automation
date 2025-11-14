@@ -31,23 +31,21 @@ services:
     command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TOKEN}
     restart: unless-stopped
 
-  ## wyoming
-  whisper:
-    container_name: whisper
-    image: rhasspy/wyoming-whisper
-    command: --model medium.en --language en
-    volumes:
-      - /opt/whisper-data:/data
+  wyoming:
+    container_name: speech-to-text
+    build:
+      context: ./docker/speech-to-text
     environment:
-      - TZ=Europe/Amsterdam
-    restart: unless-stopped
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      MAX_AUDIO_DURATION_S: 10
     ports:
       - 10300:10300
+    restart: unless-stopped
+
   ###
   piper:
     container_name: piper
     image: rhasspy/wyoming-piper
-    #command: --voice en_US-lessac-medium
     command: --voice nl_NL-pim-medium
     volumes:
       - /opt/piper-data:/data
