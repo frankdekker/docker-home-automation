@@ -65,3 +65,13 @@ services:
       - 1883:1883
       - 9001:9001
     restart: unless-stopped
+
+  govee2mqtt:
+    image: ghcr.io/wez/govee2mqtt:latest
+    container_name: govee2mqtt
+    restart: unless-stopped
+    env_file:
+      - .env
+    network_mode: host
+    volumes:
+      - /opt/govee2mqtt/data:/data
