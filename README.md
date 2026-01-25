@@ -29,3 +29,7 @@ Reference: https://community.home-assistant.io/t/mitsubishi-wf-rac-smart-m-air/4
 
 Install using HACS In HACS go to the three dots int the upper right corner choose add custom repository and add https://github.com/jeatheak/Mitsubishi-WF-RAC-Integration to the list.
 
+## Setup mosquitto
+Setup configuration and user/pass
+Read: https://github.com/sukesh-ak/setup-mosquitto-with-docker
+
