@@ -13,18 +13,6 @@ services:
     restart: unless-stopped
     privileged: true
 
-  portainer:
-    container_name: portainer
-    image: portainer/portainer-ce
-    restart: unless-stopped
-    ports:
-      - "9000:9000/tcp"
-    environment:
-      - TZ=Europe/Amsterdam
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /opt/portainer:/data
-
   cloudflared:
     container_name: cloudflared
     image: cloudflare/cloudflared:latest
