@@ -10,6 +10,7 @@ services:
       - /run/dbus:/run/dbus:ro
     ports:
       - 8123:8123
+      - 9584:9584
     restart: unless-stopped
     privileged: true
 
