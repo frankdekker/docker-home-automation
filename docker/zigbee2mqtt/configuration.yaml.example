@@ -1,0 +1,35 @@
+# Zigbee2MQTT configuration. Copy to /opt/zigbee2mqtt/data/configuration.yaml
+# Docs: https://www.zigbee2mqtt.io/guide/configuration/
+
+homeassistant:
+  enabled: true
+
+frontend:
+  enabled: true
+  port: 8080
+
+mqtt:
+  base_topic: zigbee2mqtt
+  # the mosquitto service from docker-compose.yml
+  server: mqtt://mqtt:1883
+  user: zigbee2mqtt
+  # read from /opt/zigbee2mqtt/data/secret.yaml
+  password: '!secret password'
+
+serial:
+  # Sonoff SLZB-06 (TI CC2652P, Z-Stack firmware) over the network
+  port: tcp://192.168.1.200:6638
+  adapter: zstack
+
+advanced:
+  # GENERATE: replaced by random values on the first start.
+  # Never use the built-in default network key.
+  network_key: GENERATE
+  pan_id: GENERATE
+  ext_pan_id: GENERATE
+  # quietest standard Zigbee channel in the energy scan of 2026-10-30
+  channel: 11
+  log_level: info
+
+availability:
+  enabled: true
