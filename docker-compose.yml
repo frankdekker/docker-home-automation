@@ -55,6 +55,19 @@ services:
       - "9001:9001"
     restart: unless-stopped
 
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    image: ghcr.io/koenkk/zigbee2mqtt:latest
+    environment:
+      TZ: Europe/Amsterdam
+    volumes:
+      - /opt/zigbee2mqtt/data:/app/data
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mqtt
+    restart: unless-stopped
+
   govee2mqtt:
     image: ghcr.io/wez/govee2mqtt:latest
     container_name: govee2mqtt
